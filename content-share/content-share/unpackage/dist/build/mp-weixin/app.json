@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/homePage",
+    "pages/index/contribute",
+    "pages/index/my",
+    "pages/index/exchange"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "content-sgareL",
+    "navigationBarBackgroundColor": "#fe4543",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#131313",
+    "selectedColor": "#d84855",
+    "list": [
+      {
+        "pagePath": "pages/index/homePage",
+        "text": "首页",
+        "iconPath": "static/images/shouye.png",
+        "selectedIconPath": "static/images/shouye1.png"
+      },
+      {
+        "pagePath": "pages/index/contribute",
+        "text": "投稿",
+        "iconPath": "static/images/tougao.png",
+        "selectedIconPath": "static/images/tougao1.png"
+      },
+      {
+        "pagePath": "pages/index/my",
+        "text": "我的",
+        "iconPath": "static/images/wode.png",
+        "selectedIconPath": "static/images/wode1.png"
+      }
+    ]
+  },
+  "permission": {},
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}
