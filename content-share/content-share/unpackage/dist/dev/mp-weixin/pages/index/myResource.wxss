@@ -1,0 +1,45 @@
+
+.item-row {
+	height: 160rpx;
+	padding: 20rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-around;
+	        justify-content: space-around;
+	border-bottom: 1px solid #dfdfdf;
+}
+.avatar {
+	width: 120rpx;
+	height: 120rpx;
+	-webkit-border-radius: 50%;
+	        border-radius: 50%;
+}
+.content {
+	width: 60%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+}
+.score {
+	width: 15%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+}
+.share-title {
+	font-weight: 600;
+	font-size: 14px;
+}
+.content-title {
+	font-size: 13px;
+}
+

@@ -3,7 +3,8 @@
     "pages/index/homePage",
     "pages/index/contribute",
     "pages/index/my",
-    "pages/index/exchange"
+    "pages/index/exchange",
+    "pages/index/myResource"
   ],
   "subPackages": [],
   "window": {
@@ -37,6 +38,5 @@
     ]
   },
   "permission": {},
-  "usingComponents": {},
-  "sitemapLocation": "sitemap19.json"
+  "usingComponents": {}
 }
