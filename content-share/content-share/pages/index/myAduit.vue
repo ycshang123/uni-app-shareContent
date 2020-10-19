@@ -12,8 +12,9 @@
 			</view>
 			<view class="score">
 				<view class="content-title" @click="goDetail(item.downloadUrl, item.id)" v-if="item.auditStatus == 'PASS'">审核通过</view>
-				<view class="content-title" @click="checkStatus" v-else>暂未审核</view>
-				</view>
+				<view class="content-title" @click="checkStatus" v-else-if="item.auditStatus == 'NOT_YET'">暂未审核</view>
+				<view class="content-title" @click="checkStatus" v-else>审核不通过</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -49,7 +50,7 @@ export default {
 				url: './share-change?id=' + id
 			});
 		},
-		checkStatus(){
+		checkStatus() {
 			uni.showModal({
 				content: '资源暂未审核'
 			});

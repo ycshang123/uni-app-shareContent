@@ -30,14 +30,13 @@ export default {
 	data() {
 		return {
 			share: {},
-			shareAuditDto:{
-				auditStatusEnum:'PASS',
-				reason:'发布成功'
-				
+			shareAuditDto: {
+				auditStatusEnum: ' ',
+				reason: ' ',
+				showFlag: true
 			},
 			status1: true,
-			status2: true,
-			
+			status2: true
 		};
 	},
 	onShow() {
@@ -68,30 +67,37 @@ export default {
 			});
 		},
 		getSubmit: function(id) {
-			console.log(this.shareAuditDto.auditStatusEnum);
 			console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>拿到的id是' + this.share.id);
-			let self = this;
+			if (this.status1) {
+				(this.shareAuditDto.auditStatusEnum = 'PASS'), (this.shareAuditDto.reason = '发布成功'), (this.shareAuditDto.showFlag = true);
+			}
 			console.log('>>>>>>>>>>>>>>>>>进入函数');
 			uni.request({
-				url: BASE_API_URL + '/shares/audit/' + this.share.id,
+				url: BASE_API_URL + '/shares/auditById/' + this.share.id,
 				method: 'PUT',
 				header: {
 					'content-type': 'application/json'
 				},
-				data:this.shareAuditDto,
+				data: this.shareAuditDto,
 				success: res => {
 					console.log(res.data);
 					uni.showToast({
 						title: '审批成功'
 					});
+					if (this.status1) {
+						console.log(uni.getStorageSync('user').bonus);
+						uni.setStorageSync('user').bonus = uni.getStorageSync('user').bonus + 50;
+					}
 				}
 			});
 		},
 		changeStatus() {
 			this.status1 = !this.status1;
+			this.shareAuditDto.showFlag = false;
 		},
 		changeStatus1() {
 			this.status2 = !this.status2;
+			this.shareAuditDto.showFlag = false;
 		}
 	}
 };

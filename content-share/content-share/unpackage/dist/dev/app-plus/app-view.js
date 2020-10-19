@@ -3036,7 +3036,8 @@ var render = function() {
                     },
                     [_vm._v("审核通过")]
                   )
-                : _c(
+                : _vm._$g("11-" + $30, "e")
+                ? _c(
                     "v-uni-view",
                     {
                       staticClass: _vm._$g("11-" + $30, "sc"),
@@ -3048,6 +3049,19 @@ var render = function() {
                       }
                     },
                     [_vm._v("暂未审核")]
+                  )
+                : _c(
+                    "v-uni-view",
+                    {
+                      staticClass: _vm._$g("12-" + $30, "sc"),
+                      attrs: { _i: "12-" + $30 },
+                      on: {
+                        click: function($event) {
+                          return _vm.$handleViewEvent($event)
+                        }
+                      }
+                    },
+                    [_vm._v("审核不通过")]
                   )
             ],
             1

@@ -37,8 +37,8 @@ export default {
 				},
 				success: res => {
 					console.log(res.data.data.data);
-					this.items = res.data.data.data;
-				}
+					this.items = res.data.data;
+				}    
 			});
 		},
 		goDetail(downloadUrl, id) {

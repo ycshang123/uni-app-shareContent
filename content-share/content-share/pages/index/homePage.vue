@@ -6,7 +6,7 @@
 				<view class="tabBar-child flex-center " :class="{ active: !isActive }" @click="changeTab">使用说明</view>
 			</view>
 			<view class="lable">{{ notice.content }}</view>
-			<view class="search-box"><input type="text" placeholder="请输入关键词" class="input-box" v-model="keywords" @input="getShare()" /></view>
+			<view class="search-box"><input type="text" placeholder="请输入关键词" class="input-box" v-model="keywords" @input="getShares()" /></view>
 		</view>
 		<view class="item-row" v-for="(item, index) in items" :key="index" v-if="isActive">
 			<view class="avatar">
@@ -150,25 +150,6 @@ export default {
 			});
 		},
 
-		// getShare: function() {
-		// 	this.isHaveToken();
-		// 	uni.request({
-		// 		url: BASE_API_URL + '/shares/query',
-		// 		method: 'GET',
-		// 		header: {
-		// 			'content-type': 'application/json',
-		// 			'X-Token': this.token
-		// 		},
-		// 		data: {
-		// 			title: this.keywords
-		// 		},
-		// 		success: res => {
-		// 			console.log('>>>>>>>>>>>>>>>>' + res.data);
-		// 			this.items = res.data.data;
-		// 			uni.setStorageSync('items', res.data.data);
-		// 		}
-		// 	});
-		// },
 		getNotices: function() {
 			let self = this;
 			uni.request({
